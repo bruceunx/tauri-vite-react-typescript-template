@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "app",
+  "version": "0.1.0",
+  "identifier": "com.ktr-iot.app",
+  "build": {
+    "beforeDevCommand": "bun run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "bun run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "desktop app",
+        "width": 1000,
+        "height": 720,
+        "minWidth": 850,
+        "minHeight": 720
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "createUpdaterArtifacts": true,
+    "targets": "all",
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "http://timestamp.comodoca.com"
+    },
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDdERUVBNUM5NzRFMDZGNTcKUldSWGIrQjB5YVh1ZlRHNkpCTVl2Z2dWc0FqUEFHcXF2dlhFZXl2S0hNQVVIZk8rV0VwcGNneTQK",
+      "endpoints": [
+        "https://github.com/bruceunx/ktr-app/releases/latest/download/latest.json"
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = ["src-tauri"]
+
+[workspace.dependencies]
+
+[profile.dev]
+incremental = true
+
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
