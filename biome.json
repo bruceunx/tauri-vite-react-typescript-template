@@ -1,6 +1,14 @@
 {
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
   "linter": {
+    "enabled": true,
     "rules": {
+      "recommended": true,
       "style": {
         "noParameterAssign": "off"
       },
@@ -15,12 +23,19 @@
       "complexity": {
         "useOptionalChain": "off"
       },
-      "correctness": {
-        "noUnknownProperty": "off"
+      "nursery": {
+        "useComponentExportOnlyModules": "error"
       },
-      "security": {
-        "noDangerouslySetInnerHtml": "off"
+      "correctness": {
+        "useHookAtTopLevel": "error",
+        "noUnknownProperty": "off"
       }
     }
+  },
+  "files": {
+    "ignore": ["dist"]
+  },
+  "formatter": {
+    "enabled": true
   }
 }
